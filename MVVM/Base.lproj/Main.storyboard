@@ -1,24 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--UserVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserVC" id="BYZ-38-t0r" customClass="UserVC" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfD-pP-sGk" customClass="UserTableView" customModule="MVVM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="116" id="CsI-4t-27h" customClass="UserListCell" customModule="MVVM" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CsI-4t-27h" id="zaH-sr-b0k">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUb-hb-CTy">
+                                                    <rect key="frame" x="15" y="11" width="345" height="94"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qyz-14-VO2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-RL-myk">
+                                                            <rect key="frame" x="102" y="8" width="235" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utS-OP-DOg">
+                                                            <rect key="frame" x="102" y="37" width="235" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="qyz-14-VO2" firstAttribute="leading" secondItem="LUb-hb-CTy" secondAttribute="leading" id="7Wl-U8-1Tw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qyz-14-VO2" secondAttribute="bottom" id="8Ks-BN-RMS"/>
+                                                        <constraint firstItem="hcP-RL-myk" firstAttribute="leading" secondItem="qyz-14-VO2" secondAttribute="trailing" constant="8" id="MwY-Hq-5Pq"/>
+                                                        <constraint firstItem="qyz-14-VO2" firstAttribute="height" secondItem="LUb-hb-CTy" secondAttribute="height" id="dVP-Z7-1So"/>
+                                                        <constraint firstItem="utS-OP-DOg" firstAttribute="trailing" secondItem="hcP-RL-myk" secondAttribute="trailing" id="fkA-GR-hmb"/>
+                                                        <constraint firstItem="qyz-14-VO2" firstAttribute="top" secondItem="LUb-hb-CTy" secondAttribute="top" id="gn6-ue-Gan"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hcP-RL-myk" secondAttribute="trailing" constant="8" id="oDP-6W-R2D"/>
+                                                        <constraint firstItem="utS-OP-DOg" firstAttribute="top" secondItem="hcP-RL-myk" secondAttribute="bottom" constant="8" id="swS-nL-qRu"/>
+                                                        <constraint firstItem="utS-OP-DOg" firstAttribute="leading" secondItem="hcP-RL-myk" secondAttribute="leading" id="uf8-QO-UF8"/>
+                                                        <constraint firstItem="hcP-RL-myk" firstAttribute="top" secondItem="LUb-hb-CTy" secondAttribute="top" constant="8" id="xvz-bu-QJw"/>
+                                                        <constraint firstItem="qyz-14-VO2" firstAttribute="width" secondItem="LUb-hb-CTy" secondAttribute="width" multiplier="94:345" id="z6V-5n-ODK"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LUb-hb-CTy" firstAttribute="trailing" secondItem="zaH-sr-b0k" secondAttribute="trailingMargin" id="7dm-1g-GtJ"/>
+                                                <constraint firstItem="LUb-hb-CTy" firstAttribute="leading" secondItem="zaH-sr-b0k" secondAttribute="leadingMargin" id="AZN-SW-3u6"/>
+                                                <constraint firstItem="LUb-hb-CTy" firstAttribute="top" secondItem="zaH-sr-b0k" secondAttribute="topMargin" id="Hde-AZ-ctZ"/>
+                                                <constraint firstItem="LUb-hb-CTy" firstAttribute="bottom" secondItem="zaH-sr-b0k" secondAttribute="bottomMargin" id="OuY-jV-GxG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstName" destination="hcP-RL-myk" id="5wN-VM-MUJ"/>
+                                            <outlet property="lastName" destination="utS-OP-DOg" id="ck0-ry-r6u"/>
+                                            <outlet property="userImage" destination="qyz-14-VO2" id="s6z-f8-c9s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hRv-8k-WbA"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BTF-vE-gbj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cfD-pP-sGk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Iwr-zd-Scw"/>
+                            <constraint firstItem="cfD-pP-sGk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LKK-1n-aDa"/>
+                            <constraint firstItem="cfD-pP-sGk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wYL-dW-6ZW"/>
+                            <constraint firstItem="cfD-pP-sGk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xQy-Wc-Fuo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="userTableView" destination="cfD-pP-sGk" id="lCc-Sx-rwa"/>
+                        <outlet property="userViewModel" destination="T1g-68-GJH" id="Vam-5t-uqq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="T1g-68-GJH" customClass="UserVM" customModule="MVVM" customModuleProvider="target">
+                    <connections>
+                        <outlet property="apiClient" destination="w7v-Qs-CZS" id="RiS-8H-JOe"/>
+                    </connections>
+                </customObject>
+                <customObject id="w7v-Qs-CZS" customClass="ApiClient" customModule="MVVM" customModuleProvider="target"/>
             </objects>
+            <point key="canvasLocation" x="-414" y="116"/>
         </scene>
     </scenes>
 </document>
